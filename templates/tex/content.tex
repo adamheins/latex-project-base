@@ -10,7 +10,6 @@
 
 % Template for a table.
 \begin{table}[h]
-  \label{tab:table_name}
   \caption{Describe the table}
   \centering
     \begin{tabular}{l c c}
@@ -21,4 +20,14 @@
       baz & bax \\
       \bottomrule
     \end{tabular}
+  \label{tab:table_name}
 \end{table}
+
+% Recipe for splitting one line of a multiline equation
+\begin{equation}
+  \begin{alignedat}{2}
+    \log p(X\mid Y) &= && \log p(Y\mid X) + \log p(X_{out}) + \log p(x_0) \\
+                    &= && -\frac{d}{2}\log|K_y|-\frac{1}{2}(y-m_g(X))^TK_y^T(y-m_g(X))-\frac{1}{2}x_0^Tx_0 \\
+                    &  && -\frac{d}{2}\log|K_X|-\frac{1}{2}(X_{out}-m_f(X_{in}))^TK_X^{-1}(X_{out}-m_f(X_{in})) \\
+  \end{alignedat}
+\end{equation}
