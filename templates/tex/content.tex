@@ -1,3 +1,40 @@
+\documentclass{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage{parskip}
+\usepackage{amssymb,amsfonts,amsmath,amscd}
+\usepackage{bm}
+\usepackage{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage{cite}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{enumitem}
+\usepackage{mathtools}
+
+% Table stuff.
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{multirow}
+
+% Useful commands.
+\input{commands}
+
+\title{This is the Title}
+\author{Your Name}
+
+\begin{document}
+
+\maketitle
+
+% Uncomment if you want to include a table of contents.
+% \tableofcontents
+
+% Uncomment if you want to include an abstract.
+% \begin{abstract}
+%   \input{abstract}
+% \end{abstract}
+
 \section{A Section}
 
 % Template to include a figure.
@@ -9,25 +46,37 @@
 % \end{figure}
 
 % Template for a table.
-\begin{table}[h]
-  \caption{Describe the table}
-  \centering
-    \begin{tabular}{l c c}
-      \toprule
-      Header 1 & Header 2 \\
-      \midrule
-      foo & bar \\
-      baz & bax \\
-      \bottomrule
-    \end{tabular}
-  \label{tab:table_name}
-\end{table}
+% \begin{table}[h]
+%   \caption{Describe the table}
+%   \centering
+%     \begin{tabular}{l c c}
+%       \toprule
+%       Header 1 & Header 2 \\
+%       \midrule
+%       foo & bar \\
+%       baz & bax \\
+%       \bottomrule
+%     \end{tabular}
+%   \label{tab:table_name}
+% \end{table}
 
 % Recipe for splitting one line of a multiline equation
-\begin{equation}
-  \begin{alignedat}{2}
-    \log p(X\mid Y) &= && \log p(Y\mid X) + \log p(X_{out}) + \log p(x_0) \\
-                    &= && -\frac{d}{2}\log|K_y|-\frac{1}{2}(y-m_g(X))^TK_y^T(y-m_g(X))-\frac{1}{2}x_0^Tx_0 \\
-                    &  && -\frac{d}{2}\log|K_X|-\frac{1}{2}(X_{out}-m_f(X_{in}))^TK_X^{-1}(X_{out}-m_f(X_{in})) \\
-  \end{alignedat}
-\end{equation}
+% \begin{equation}
+%   \begin{alignedat}{2}
+%     \log p(X\mid Y) &= && \log p(Y\mid X) + \log p(X_{out}) + \log p(x_0) \\
+%                     &= && -\frac{d}{2}\log|K_y|-\frac{1}{2}(y-m_g(X))^TK_y^T(y-m_g(X))-\frac{1}{2}x_0^Tx_0 \\
+%                     &  && -\frac{d}{2}\log|K_X|-\frac{1}{2}(X_{out}-m_f(X_{in}))^TK_X^{-1}(X_{out}-m_f(X_{in})) \\
+%   \end{alignedat}
+% \end{equation}
+
+% Uncomment for a bibliography.
+% \newpage
+% \bibliographystyle{unsrt}
+% \bibliography{bibliography}
+
+% Uncomment for appendices.
+% \newpage
+% \appendix
+% \input{appendix}
+
+\end{document}

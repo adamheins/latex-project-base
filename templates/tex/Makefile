@@ -1,7 +1,5 @@
 PDF_FILE=out.pdf
-
-TEX_BASENAME=template
-TEX_FILE=$(TEX_BASENAME).tex
+TEX_FILE=content.tex
 
 
 $(PDF_FILE): $(TEX_FILE) clean
