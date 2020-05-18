@@ -37,7 +37,7 @@
 
 \section{A Section}
 
-% Template to include a figure.
+% Recipe to include a figure.
 % \begin{figure}[t]
 %   \centering
 %     \includegraphics[scale=1, trim = 0mm 0mm 0mm 0mm]{fig_name.ext}
@@ -45,7 +45,7 @@
 %   \label{fig:fig_name}
 % \end{figure}
 
-% Template for a table.
+% Recipe for a table.
 % \begin{table}[h]
 %   \caption{Describe the table}
 %   \centering
@@ -68,6 +68,33 @@
 %                     &  && -\frac{d}{2}\log|K_X|-\frac{1}{2}(X_{out}-m_f(X_{in}))^TK_X^{-1}(X_{out}-m_f(X_{in})) \\
 %   \end{alignedat}
 % \end{equation}
+
+% Recipe for cases
+% \begin{equation}
+%   f(x) = \begin{cases}
+%     1 & \text{if } x > 0 \\
+%     0 & \text{else}
+%   \end{cases}
+% \end{equation}
+
+% Recipe for multiple equations on the same line
+\begin{align}
+  a &= 0 & b &= 1
+\end{align}
+
+% Recipe for optimization
+\begin{equation}
+\begin{aligned}
+  f(x^*) = \min_x      & \quad f_0(x) \\
+           \text{s.t.} & \quad f_i(x) \leq b_i, \; i = 1, \ldots, m.
+\end{aligned}
+\end{equation}
+
+% Recipe for under/overbrace
+\begin{equation}
+  y = \underbrace{a + b}_{\text{good}} + \overbrace{c + d}^{\text{bad}}
+\end{equation}
+
 
 % Uncomment for a bibliography.
 % \newpage

@@ -1,0 +1,266 @@
+\documentclass[12pt,letterpaper,fleqn,oneside]{article}
+%\usepackage[letterpaper,left=25mm,right=25mm,top=25mm,bottom=25mm]{geometry}
+% Packages
+\usepackage{sectsty}
+\usepackage{caption}
+%\usepackage{pslatex}
+\usepackage{times}
+\usepackage{amssymb,amsfonts,amsmath,amscd}
+\usepackage[pdftex,colorlinks]{hyperref}
+\usepackage[pdftex]{graphicx}
+\usepackage{fnpos}
+\usepackage{subfigure}
+\usepackage{verbatim}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\usepackage{setspace}
+
+% Some handy commands
+\newcommand{\norm}[1]{\left\Vert#1\right\Vert}
+\newcommand{\abs}[1]{\left\vert#1\right\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\Real}{\mathbb R}
+\newcommand{\Complex}{\mathbb C}
+\newcommand{\eps}{\varepsilon}
+\newcommand{\To}{\longrightarrow}
+\newcommand{\Ker}{\textup{Ker}}
+\newcommand{\Img}{\textup{Img}}
+\newcommand{\diag}{\textup{diag}}
+\newcommand{\circulant}{\textup{circ}}
+
+% checks and Xs
+\newcommand{\yes}{\ding{51}}
+\newcommand{\no}{\ding{55}}
+
+% Tim's Math Defs
+\newcommand{\bcf}{\;\mbox{\boldmath ${\cal F}$\unboldmath}}
+\def\Vec#1{\!\!\hbox{$#1$\kern-0.38em\lower0.85em\hbox{$\vec{}\,$}}\,}%
+\newcommand{\bbm}{\begin{bmatrix}}
+	\newcommand{\ebm}{\end{bmatrix}}
+\DeclareMathAlphabet{\mbf}{OT1}{ptm}{b}{n}
+\newcommand{\mbs}[1]{{\boldsymbol{#1}}}
+\def\ep{\epsilon}
+\def\la{\lambda}
+\def\om{\omega}
+\newcommand{\qc}[1]{{#1}^+}
+\newcommand{\qo}[1]{{#1}^\oplus}
+\newcommand{\qi}[1]{{#1}^{\scalebox{0.5}{$-1$}}}
+
+% Math Defs
+\def\N{\ensuremath{\mathcal{N}}}
+\newcommand{\normpdf}[2]{\mathcal{N}(#1|\mu_#2,\sigma_#2^2)}
+\newcommand{\gaussian}[2]{\frac{1}{\sigma_#2\sqrt{2\pi}}e^{-\frac{(#1-\mu_#2)^2}{2\sigma_#2^2}}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\ds}{\displaystyle}
+
+% Some new environments
+\newtheorem{preexample}{\sf\bfseries Example}
+\newenvironment{example}
+{\begin{preexample}\upshape\hspace{-5.9pt}{\sf\bfseries :}}
+	{~\hfill $\blacktriangleleft$ \end{preexample}}
+
+\newtheorem{prethm}{\sf\bfseries Theorem}
+\newenvironment{thm}[1]
+{\begin{prethm}\hspace{-5.9pt}{\sf\bfseries #1:}}
+	{\end{prethm}}
+
+\newtheorem{prelem}{\sf\bfseries Lemma}
+\newenvironment{lem}[1]
+{\begin{prelem}\hspace{-5.9pt}{\sf\bfseries #1:}}
+	{\end{prelem}}
+
+\newtheorem{preprop}{\sf\bfseries Proposition}
+\newenvironment{prop}[1]
+{\begin{preprop}\hspace{-5.9pt}{\sf\bfseries #1:}}
+	{\end{preprop}}
+
+\newenvironment{prf}[1]
+{\indent\textit{Proof#1:}}
+{~\hfill $\blacksquare$\\}
+
+% Fix some error reporting
+\vfuzz2pt % Don't report over-full v-boxes if over-edge is small
+\hfuzz2pt % Don't report over-full h-boxes if over-edge is small
+
+% Set the page size
+\addtolength{\hoffset}{-0.5in} \addtolength{\voffset}{-0.75in}
+\setlength{\textwidth}{6.5in} \setlength{\textheight}{8.9in}
+\setlength{\headheight}{0.6in}
+%\setlength{\headsep}{0.4in}
+
+\setlength{\footskip}{20pt}
+\setlength{\fboxsep}{12pt}
+
+% Set the paragraph skip
+\setlength{\parskip}{3pt}
+\setlength{\parindent}{0pt}
+
+% - User Input --------------------------------------------------
+%
+% Insert the program, document title, author, etc.
+
+\newcommand{\UTIASprogram}{N/A}
+\newcommand{\UTIAStitle}{}
+\newcommand{\UTIASdocument}{TR-Template}
+\newcommand{\UTIASrevision}{Rev: 1.0}
+\newcommand{\UTIASauthor}{Name}
+\newcommand{\UTIASreviewer}{}
+
+% ---------------------------------------------------------------
+
+% PDF setup
+\hypersetup{%
+	pdftitle={\UTIASdocument: \UTIAStitle},
+	pdfauthor={\UTIASauthor},
+	pdfkeywords={},
+	pdfsubject={\UTIASprogram},
+	pdfstartview={},
+	urlcolor=cyan,
+	linkcolor=red,
+}%
+
+% Define some hyphenation
+\hyphenation{aero-space} \hyphenation{auton-omous}
+
+
+
+% Fix the footnotes location
+\makeFNbottom \makeFNbelow
+
+% ---------------------------------------------------------------
+
+\title{\sf\bfseries \UTIAStitle }
+
+\author{Name \\
+	Institute for Aerospace Studies \\
+	University of Toronto\\
+	\texttt{<email>} \\
+	Supervisor: Dr. Angela Schoellig
+}
+\date{}
+
+% ---------------------------------------------------------------
+% \section font sizes
+
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0ex}%
+	{-6ex plus -1ex minus -0.2ex}%
+	{1ex plus 0.2ex}%
+	{\sf\LARGE\bfseries}}
+
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0ex}%
+	{-5ex plus -1ex minus -0.2ex}%
+	{1ex plus 0.2ex}%
+	{\sf\Large\bfseries}}
+
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0ex}%
+	{-4ex plus -1ex minus -0.2ex}%
+	{1ex plus 0.2ex}%
+	{\sf\large\bfseries}}
+
+\let\OLDthebibliography\thebibliography
+\renewcommand\thebibliography[1]{
+	\OLDthebibliography{#1}
+	\setlength{\parskip}{0pt}
+	\setlength{\itemsep}{0pt plus 0.3ex}
+}
+
+% ---------------------------------------------------------------
+% \paragraph numbering
+
+\makeatletter
+\renewcommand{\paragraph}{\@startsection{paragraph}{4}{0ex}%
+	{-3ex plus -1ex minus -0.2ex}%
+	{1ex plus 0.2ex}%
+	{\sf\normalsize\bfseries}}
+\makeatother
+
+\stepcounter{secnumdepth}
+\stepcounter{tocdepth}
+
+% ---------------------------------------------------------------
+
+
+\begin{document}
+
+	% Define the basic page style
+	\fancypagestyle{plain}{%
+		\fancyhf{}%
+		\fancyfoot[C]{}%
+		\fancyhead[R]{\begin{tabular}[b]{r}\small\sf \UTIASdocument\\
+				\small\sf\UTIASrevision\\
+				\small\sf\today \end{tabular}}%
+		\fancyhead[L]{\includegraphics[height=0.45in]%
+			{figs/utias.pdf} \begin{tabular}[b]{l}\sc{University of Toronto} \\ \sc{Institute for Aerospace Studies} \\ \mbox{} \end{tabular}}%
+		\renewcommand{\headrulewidth}{0pt}
+		\renewcommand{\footrulewidth}{0pt}}
+
+	% Set the page style for the document
+	\pagestyle{fancy}
+
+	% Set the section labeling font
+	\allsectionsfont{\sf\bfseries}
+
+	% Set the caption labeling font
+	\renewcommand{\captionlabelfont}{\sf\bfseries}
+
+	% ---------------------------------------------------------------
+
+	% Set the page headers and footers.
+	\lhead{ \includegraphics[height=0.45in]%
+		{figs/utias.pdf} \begin{tabular}[b]{l}\sc{University of Toronto} \\ \sc{Institute for Aerospace Studies} \\ \mbox{} \end{tabular}}
+	\rhead{ \begin{tabular}[b]{r}\small\sf \UTIASdocument\\
+			\small\sf\UTIASrevision\\
+			\small\sf\today \end{tabular}}
+	\chead{}
+	\lfoot{}
+	\cfoot{\thepage}
+	\rfoot{}
+
+	\renewcommand{\headrulewidth}{0pt}
+	\renewcommand{\footrulewidth}{0pt}
+
+
+	% ---------------------------------------------------------------
+
+	\maketitle%
+
+
+	\begin{abstract}
+	Here is the abstract.
+	\end{abstract}
+
+	% - User Input Document Text ------------------------------------
+	\onehalfspacing
+	\section{Introduction}
+	\input{motivation}
+	\input{objectives}
+	\input{litreview}
+
+%	\newpage
+	\input{framework}
+
+	\input{conclusion}
+
+%	\newpage
+	\input{plan}
+
+	% ---------------------------------------------------------------
+
+%	\newpage
+	\singlespacing
+	%\nocite{*}
+	\bibliographystyle{plain}
+	%\setlength{\parskip}{1pt}
+	{\normalsize
+		\bibliography{bib/TR-Template-bib}}
+
+
+	% ---------------------------------------------------------------
+
+	%\newpage
+	%\appendix
+	%\section{Appendix Title}
+	%\subsection{Subsection of Appendix}
+
+\end{document}
