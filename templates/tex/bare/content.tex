@@ -7,7 +7,6 @@
 \usepackage{hyperref}
 \usepackage[pdftex]{graphicx}
 \usepackage{url}
-\usepackage{cite}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{enumitem}
 \usepackage{mathtools}
@@ -17,6 +16,15 @@
 \usepackage{booktabs}
 \usepackage{makecell}
 \usepackage{multirow}
+
+% biblatex for bibliography
+\usepackage[
+backend=biber,
+maxcitenames=1,
+style=authoryear,
+]{biblatex}
+
+\addbibresource{bibliography.bib}
 
 % Useful commands.
 \input{commands}
@@ -36,71 +44,10 @@
 %   \input{abstract}
 % \end{abstract}
 
-\section{A Section}
-
-% Recipe to include a figure.
-% \begin{figure}[t]
-%   \centering
-%     \includegraphics[scale=1, trim = 0mm 0mm 0mm 0mm]{fig_name.ext}
-%   \caption{Describe the figure.}
-%   \label{fig:fig_name}
-% \end{figure}
-
-% Recipe for a table.
-% \begin{table}[h]
-%   \caption{Describe the table}
-%   \centering
-%     \begin{tabular}{l c c}
-%       \toprule
-%       Header 1 & Header 2 \\
-%       \midrule
-%       foo & bar \\
-%       baz & bax \\
-%       \bottomrule
-%     \end{tabular}
-%   \label{tab:table_name}
-% \end{table}
-
-% Recipe for splitting one line of a multiline equation
-% \begin{equation}
-%   \begin{alignedat}{2}
-%     \log p(X\mid Y) &= && \log p(Y\mid X) + \log p(X_{out}) + \log p(x_0) \\
-%                     &= && -\frac{d}{2}\log|K_y|-\frac{1}{2}(y-m_g(X))^TK_y^T(y-m_g(X))-\frac{1}{2}x_0^Tx_0 \\
-%                     &  && -\frac{d}{2}\log|K_X|-\frac{1}{2}(X_{out}-m_f(X_{in}))^TK_X^{-1}(X_{out}-m_f(X_{in})) \\
-%   \end{alignedat}
-% \end{equation}
-
-% Recipe for cases
-% \begin{equation}
-%   f(x) = \begin{cases}
-%     1 & \text{if } x > 0 \\
-%     0 & \text{else}
-%   \end{cases}
-% \end{equation}
-
-% Recipe for multiple equations on the same line
-\begin{align}
-  a &= 0 & b &= 1
-\end{align}
-
-% Recipe for optimization
-\begin{equation}
-\begin{aligned}
-  f(x^*) = \min_x      & \quad f_0(x) \\
-           \text{s.t.} & \quad f_i(x) \leq b_i, \; i = 1, \ldots, m.
-\end{aligned}
-\end{equation}
-
-% Recipe for under/overbrace
-\begin{equation}
-  y = \underbrace{a + b}_{\text{good}} + \overbrace{c + d}^{\text{bad}}
-\end{equation}
-
 
 % Uncomment for a bibliography.
 % \newpage
-% \bibliographystyle{unsrt}
-% \bibliography{bibliography}
+% \printbibliography
 
 % Uncomment for appendices.
 % \newpage
