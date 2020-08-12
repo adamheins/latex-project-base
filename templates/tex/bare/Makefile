@@ -1,6 +1,6 @@
 PDF_FILE=out.pdf
 TEX_FILE=content.tex
-FLAGS=--bibtex-cmd=biber
+FLAGS=--bibtex-cmd=biber --latex-cmd pdflatex
 
 
 $(PDF_FILE): $(TEX_FILE) clean
